@@ -1,0 +1,6 @@
+{
+  "name": "Upload Foto Properti",
+  "description": "Form pengunggahan foto properti bersih dan minimalis dengan highlight foto utama dan mini galeri swipe interaktif hingga 4 foto per kategori.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
