@@ -6,7 +6,7 @@ import { RequirementsCard } from './components/RequirementsCard';
 import { LightboxModal } from './components/LightboxModal';
 import { ListingPreviewModal } from './components/ListingPreviewModal';
 import { PropertyHeader } from './components/PropertyHeader';
-import { CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Check, Sparkles } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [categories, setCategories] = useState<PhotoCategory[]>(INITIAL_CATEGORIES);
@@ -242,39 +242,8 @@ export default function App() {
             </div>
           </div>
 
-          {/* Minimalist category fulfillment badges (Visual confirmation that min. 1 photo is required) */}
-          <div className="py-3 px-4 bg-slate-50 rounded-xl border border-slate-200/80 my-4 flex flex-wrap items-center justify-between gap-2 text-xs">
-            <div className="flex items-center gap-2 text-slate-700 font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Ketentuan Wajib: Minimal terisi 1 foto per kategori</span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              {categories.map((c) => {
-                const filled = c.photos.length >= 1;
-                return (
-                  <span
-                    key={c.id}
-                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium transition-colors ${
-                      filled
-                        ? 'bg-emerald-100/70 text-emerald-800 border border-emerald-300/60'
-                        : 'bg-amber-100/60 text-amber-800 border border-amber-300/60'
-                    }`}
-                  >
-                    {filled ? (
-                      <Check className="w-3 h-3 text-emerald-600 stroke-[3]" />
-                    ) : (
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                    )}
-                    <span>{c.label.split(' ')[0]}: {c.photos.length}/4</span>
-                  </span>
-                );
-              })}
-            </div>
-          </div>
-
           {/* 2x2 Responsive Grid matching screenshot */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-6">
             {categories.map((cat) => (
               <PhotoUploaderBox
                 key={cat.id}
